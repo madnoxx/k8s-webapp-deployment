@@ -25,11 +25,11 @@ spec:
         - name: database__connection__host
           value: "{{ .Release.Name }}-mariadb"
         - name: database__connection__user
-          value: {{ .Values.mariadb.auth.username }}
+          value: "{{ .Values.mariadb.auth.username }}"
         - name: database__connection__password
           valueFrom:
             secretKeyRef:
               name: {{ .Release.Name }}-mariadb
               key: mariadb-password
         - name: database__connection__database
-          value: {{ .Values.mariadb.auth.database }}
+          value: "{{ .Values.mariadb.auth.database }}"
