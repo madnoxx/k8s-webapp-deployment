@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-ghost-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: ghost
+  ports:
+    - port: 80
+      targetPort: 2368
